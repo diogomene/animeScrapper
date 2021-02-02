@@ -35,10 +35,7 @@ function getAnime(animeurl){
         r=>r.text()
         ).then(body=>{
             const $ = cheerio.load(body);
-            const tempo=[]
-            $('.se-c').each((i,e)=>{
                 const eps=[];
-                console.log("temp")
                 $('.se-a .episodios li').each((i,e)=>{
                     const ep=$(e);
                     const link=ep.find('.episodiotitle a').attr('href')
@@ -49,9 +46,8 @@ function getAnime(animeurl){
                     }
                     eps.push(epInfo)
                 })
-                tempo.push(eps);
-            })
-            return tempo
+
+            return eps;
         })
 }
 
