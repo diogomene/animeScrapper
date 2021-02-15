@@ -8,7 +8,7 @@ function getInfo(anime){
             ).then(r=>{
                 const animes=[];
                 const $=cheerio.load(r);
-                $('.animation-2 .item').each((i,e)=>{
+                $('.item .se').each((i,e)=>{
                     const anime = $(e);
                     const animeInfo ={
                         url: anime.find('.poster a').attr('href'),
